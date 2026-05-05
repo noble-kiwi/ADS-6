@@ -51,7 +51,7 @@ class TPQueue {
 };
 
 struct SYM {
-    char character;
+    char ch;
     int priority;
 };
 
