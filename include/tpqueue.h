@@ -8,7 +8,7 @@ class TPQueue {
     struct Node {
         T item;
         Node* nextNode;
-        Node(const T& element) : item(element), nextNode(nullptr) {}
+        explicit Node(const T& element) : item(element), nextNode(nullptr) {}
     };
     Node* top;
 
@@ -33,7 +33,8 @@ class TPQueue {
             top = newNode;
         } else {
             Node* current = top;
-            while (current->nextNode && current->nextNode->item.priority >= val.priority) {
+            while (current->nextNode &&
+                   current->nextNode->item.priority >= val.priority) {
                 current = current->nextNode;
             }
             newNode->nextNode = current->nextNode;
